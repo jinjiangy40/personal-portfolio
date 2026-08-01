@@ -18,10 +18,17 @@ const capabilities = [
   ["04", "组织策划与执行", "把多人、多环节的事情拆开、对齐并推进到现场。", "赛事 / 主持"],
 ];
 
-const slideNames = ["开场", "档案", "经历", "能力", "作品", "个人", "联系"];
+const slideNames = ["开场", "档案", "导航", "经历", "能力", "作品", "个人", "联系"];
+const hubItems = [
+  { title: "我的项目库", en: "PROJECT ARCHIVE", text: "产品、软件与硬件原型，以及每次真实落地后的判断与反思。", target: 5 },
+  { title: "我的履历", en: "EXPERIENCE", text: "实习、商业实践与技术学习，组成持续向产品靠近的路径。", target: 3 },
+  { title: "校园经历", en: "CAMPUS", text: "主持、学生组织与大型赛事，让想法在多人协作中发生。", target: 3 },
+  { title: "课外拓展", en: "BEYOND CLASS", text: "科学营、社群与公开表达，保持对真实世界的连接与好奇。", target: 6 },
+];
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [activeHub, setActiveHub] = useState(0);
   const touchX = useRef<number | null>(null);
   const total = slideNames.length;
   const go = (index: number) => setCurrent(Math.max(0, Math.min(total - 1, index)));
@@ -57,35 +64,40 @@ export default function Home() {
       <section className={`slide deck-hero ${current === 0 ? "is-active" : ""}`} aria-hidden={current !== 0}>
         <div className="grid" aria-hidden="true" />
         <div className="deck-copy"><p className="eyebrow">AI PRODUCT INTERN · 2026 / 27</p><h1><small>袁锦江</small>把技术理解，<em>变成真实可用的产品。</em></h1><p>澳门科技大学人工智能本科生。关注 AI 如何进入真实工作流，也在一次次原型、沟通与交付中学习产品判断。</p><button className="button primary" onClick={next}>点击进入档案 →</button></div>
-        <div className="signal-card"><div className="orbit"><span /><span /><span /><b>YJJ</b></div><div className="coord">22.197 / 113.543<br />MUST · MACAU</div><div className="index"><b>01</b><span>技术理解</span><b>02</b><span>产品判断</span><b>03</b><span>真实落地</span></div></div>
+        <figure className="hero-portrait"><img src="/yuan-jinjiang-portrait.jpg" alt="袁锦江黑白个人写真" /><figcaption><span>PORTRAIT / 001</span><b>YJJIANG · 21</b><small>CHANGSHA → HENGQIN</small></figcaption><div className="portrait-scan" aria-hidden="true" /></figure>
       </section>
 
       <section className={`slide deck-profile ${current === 1 ? "is-active" : ""}`} aria-hidden={current !== 1}>
         <div className="slide-label">01 / PERSONAL DOSSIER</div><div className="deck-title"><h2>不是一个标签，<br />而是一组正在交叉的能力。</h2><p>人工智能给我技术坐标，真实项目让我学习判断。</p></div>
-        <div className="dossier"><article><span>MUST · BSAI · 2027</span><h3>产品 × 技术 × 业务</h3><p>我不把“懂技术”当作终点。更想理解用户为什么需要、团队怎样实现、产品如何在约束中成立。</p></article><dl><div><dt>EDUCATION</dt><dd>澳门科技大学 · 人工智能</dd></div><div><dt>DIRECTION</dt><dd>AI 产品实习</dd></div><div><dt>AVAILABLE</dt><dd>2026.09—2027.06</dd></div></dl></div>
+        <div className="identity-board"><figure className="dossier-photo"><img src="/yuan-jinjiang-portrait.jpg" alt="袁锦江个人档案照片" /><figcaption>OFFICIAL PORTRAIT / YJJ · 2026</figcaption></figure><div className="identity-tiles"><article><span>01 / AGE</span><strong>21</strong><small>YEARS OLD</small></article><article><span>02 / MBTI</span><strong>ENTJ</strong><small>COMMANDER</small></article><article><span>03 / FROM</span><strong>湖南长沙</strong><small>CHANGSHA · HUNAN</small></article><article><span>04 / NOW</span><strong>珠海横琴</strong><small>HENGQIN · ZHUHAI</small></article></div></div>
       </section>
 
-      <section className={`slide deck-timeline ${current === 2 ? "is-active" : ""}`} aria-hidden={current !== 2}>
+      <section className={`slide deck-hub ${current === 2 ? "is-active" : ""}`} aria-hidden={current !== 2}>
+        <div className="slide-label">02 / PERSONAL SYSTEM</div><div className="hub-copy"><p className="eyebrow">SELECT A SIGNAL</p><h2>从一个中心，<br />进入四组个人档案。</h2><article><span>{hubItems[activeHub].en}</span><h3>{hubItems[activeHub].title}</h3><p>{hubItems[activeHub].text}</p><button onClick={() => go(hubItems[activeHub].target)}>进入这一章 →</button></article></div>
+        <div className="hub-orbit" aria-label="个人内容导航"><div className="hub-core"><b>YJJ</b><small>PERSONAL<br />SYSTEM</small></div>{hubItems.map((item,i)=><button key={item.title} className={i===activeHub?"active":""} onClick={()=>setActiveHub(i)}><i /><span>0{i+1}</span><strong>{item.title}</strong></button>)}</div>
+      </section>
+
+      <section className={`slide deck-timeline ${current === 3 ? "is-active" : ""}`} aria-hidden={current !== 3}>
         <div className="slide-label">02 / FIELD RECORDS</div><div className="deck-title"><h2>从代码、市场到现场，<br />在不同环境里练习推进。</h2></div>
         <div className="deck-records">{experiences.map((item,i)=><article key={item[1]}><b>0{i+1}</b><time>{item[0]}</time><h3>{item[1]}</h3><p>{item[2]}</p></article>)}</div>
       </section>
 
-      <section className={`slide deck-capabilities ${current === 3 ? "is-active" : ""}`} aria-hidden={current !== 3}>
+      <section className={`slide deck-capabilities ${current === 4 ? "is-active" : ""}`} aria-hidden={current !== 4}>
         <div className="slide-label">03 / CAPABILITY SYSTEM</div><div className="deck-title"><h2>能力不靠百分比，<br />靠真实证据交叉验证。</h2></div>
         <div className="deck-cap-grid">{capabilities.map(([n,t,d,e])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p><small>EVIDENCE · {e}</small></article>)}</div>
       </section>
 
-      <section className={`slide deck-work ${current === 4 ? "is-active" : ""}`} aria-hidden={current !== 4}>
+      <section className={`slide deck-work ${current === 5 ? "is-active" : ""}`} aria-hidden={current !== 5}>
         <div className="slide-label">04 / SELECTED WORK</div><div className="deck-title"><h2>让想法进入<br />可以被验证的环境。</h2></div>
-        <div className="deck-projects">{projects.map((project,i)=><Link href={`/projects/${project.slug}`} className={`deck-project ${project.slug}`} key={project.slug}><div><span>CASE 0{i+1} · {project.year}</span><b>{project.code}</b></div><article><h3>{project.title}</h3><strong>{project.subtitle}</strong><p>{project.summary}</p><em>打开案例档案 ↗</em></article></Link>)}</div>
+        <div className="deck-projects">{projects.map((project,i)=><Link href={`/projects/${project.slug}`} className={`deck-project ${project.slug}`} key={project.slug}><div><span>CASE 0{i+1} · {project.year}</span><b>{project.code}</b><small className="project-media-slot">PROJECT IMAGE · 待补充</small></div><article><h3>{project.title}</h3><strong>{project.subtitle}</strong><p>{project.summary}</p><em>打开案例档案 ↗</em></article></Link>)}</div>
       </section>
 
-      <section className={`slide deck-human ${current === 5 ? "is-active" : ""}`} aria-hidden={current !== 5}>
+      <section className={`slide deck-human ${current === 6 ? "is-active" : ""}`} aria-hidden={current !== 6}>
         <div className="slide-label">05 / HUMAN LAYER</div><div className="deck-title"><h2>产品之外，<br />保持表达、连接与好奇。</h2></div>
         <div className="deck-human-grid"><article><span>VOICE</span><h3>主持与公开表达</h3><p>在舞台、分享会和活动现场中，练习把复杂信息变得清楚、有感染力。</p></article><article><span>COMMUNITY</span><h3>社群与真实连接</h3><p>对接学生、商家与活动参与者，在长期互动中理解需求并建立信任。</p></article><article><span>EXPLORE</span><h3>持续探索</h3><p>从计算城市科学营到软硬件原型，愿意进入陌生领域，快速建立理解。</p></article></div>
       </section>
 
-      <section className={`slide deck-contact ${current === 6 ? "is-active" : ""}`} aria-hidden={current !== 6}>
+      <section className={`slide deck-contact ${current === 7 ? "is-active" : ""}`} aria-hidden={current !== 7}>
         <p className="eyebrow">06 / NEXT SIGNAL</p><h2>寻找一个真实问题，<br />一起把它做成产品。</h2><p>目标方向 · AI 产品实习 / 产品实习</p><div className="deck-contact-links"><a href="mailto:1230017371@student.must.edu.mo">职业邮箱 ↗</a><a href="/yuan-jinjiang-resume.pdf" download>下载脱敏简历 ↓</a><span>GitHub / LinkedIn · 待补充</span></div>
       </section>
     </div>
