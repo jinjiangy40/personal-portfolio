@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import EvidenceGallery from "../EvidenceGallery";
 import { projects } from "../data";
 
 export function generateStaticParams() {
@@ -111,58 +112,7 @@ export default async function ProjectPage({
           </h2>
         </div>
         {project.evidenceNote ? <p className="evidence-note">{project.evidenceNote}</p> : null}
-        <div
-          className={`evidence-grid ${evidence.length ? "has-media" : ""} ${
-            evidence.length >= 4 ? "dense" : ""
-          }`}
-        >
-          {evidence.length
-            ? evidence.map((item) =>
-                item.kind === "image" ? (
-                  <figure key={item.src} className="evidence-card">
-                    <span>{item.label}</span>
-                    <img src={item.src} alt={item.caption} />
-                    <figcaption>
-                      <b>{item.caption}</b>
-                    </figcaption>
-                  </figure>
-                ) : (
-                  <figure key={item.src} className="evidence-card evidence-download">
-                    <span>{item.label}</span>
-                    <div className="evidence-download-body">
-                      <b>{item.caption}</b>
-                      <small>点击下载本地演示文件</small>
-                      <a
-                        className="button primary"
-                        href={item.src}
-                        download={item.downloadName ?? true}
-                      >
-                        下载功能演示 ↓
-                      </a>
-                    </div>
-                  </figure>
-                ),
-              )
-            : (
-              <>
-                <figure>
-                  <span>01</span>
-                  <b>最终成品 / 核心界面</b>
-                  <small>建议横向主视觉</small>
-                </figure>
-                <figure>
-                  <span>02</span>
-                  <b>使用过程 / 功能演示</b>
-                  <small>建议截图或短视频</small>
-                </figure>
-                <figure>
-                  <span>03</span>
-                  <b>草图 / 制作过程</b>
-                  <small>建议 2-4 张过程图</small>
-                </figure>
-              </>
-            )}
-        </div>
+        <EvidenceGallery evidence={evidence} />
       </section>
 
       <section className="case-panel results">

@@ -301,18 +301,12 @@ export default function Home() {
           <div className="deck-projects">
             {projects.map((project, i) => (
               <Link href={`/projects/${project.slug}/`} className={`deck-project ${project.slug}`} key={project.slug}>
-                <div>
-                  <span>
-                    CASE 0{i + 1} · {project.year}
-                  </span>
-                  <b>{project.code}</b>
-                  <small className="project-media-slot">
-                    {project.slug === "selectpc"
-                      ? "STREAMLIT HOME · SELECTPC"
-                      : project.slug === "voice-wings"
-                        ? "HARDWARE PROTOTYPE · VOICE WINGS"
-                        : "PROJECT IMAGE · 待补充"}
-                  </small>
+                <div className="project-cover" aria-hidden="true">
+                  <span className="project-cover-mark">CASE 0{i + 1}</span>
+                  <strong className="project-cover-title">{project.title}</strong>
+                  <em className="project-cover-en">{project.code}</em>
+                  <i className="project-cover-bloom" />
+                  <i className="project-cover-bloom alt" />
                 </div>
                 <article>
                   <h3>{project.title}</h3>
