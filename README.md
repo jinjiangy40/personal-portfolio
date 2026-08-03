@@ -1,100 +1,56 @@
-# vinext-starter
+# 袁锦江 · AI 产品作品集
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+创建时间：2026-08-01  
+更新时间：2026-08-02
 
-## Prerequisites
+个人作品集网站。已从 ChatGPT Sites（vinext / 私密站点）迁移为标准 Next.js 静态导出，可公开访问、本地修改与任意静态托管部署。
 
-- Node.js `>=22.13.0`
+## 技术栈
 
-## Quick Start
+- Next.js 15（`output: "export"` 静态导出）
+- React 19
+- TypeScript
+- Tailwind CSS 4
+
+## 本地运行
+
+需要 Node.js `>=20`。
 
 ```bash
 npm install
 npm run dev
+```
+
+浏览器打开：`http://localhost:3000`
+
+## 构建与预览
+
+```bash
 npm run build
 ```
 
-This starter does not use `wrangler.jsonc`.
+静态文件输出到 `out/`。可用任意静态服务器预览：
 
-## Included Shape
-
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
-
-The user ID is stable for the same user on the same Site and different across Sites. Email and name are intended for display or contact purposes.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+npx serve out
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+## 主要目录
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+- `app/`：页面、文案、交互与样式
+- `app/projects/`：项目案例数据与详情页
+- `public/`：照片、脱敏简历、分享封面
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+## 部署说明
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+当前构建产物为纯静态站点（`out/`），可部署到：
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+- Cloudflare Pages（大陆访问相对友好，推荐）
+- Vercel
+- GitHub Pages / Netlify 等任意静态托管
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+不再依赖 ChatGPT Sites 登录与私密访问控制。
 
-## Useful Commands
+## 说明
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
-
-## Learn More
-
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+仓库中仍保留部分旧 vinext 模板文件（如 `worker/`、`vite.config.ts`、`build/`），本地开发与构建不会使用它们；后续可清理。
