@@ -20,6 +20,8 @@ export type Project = {
   decisions: string[];
   outcome: string[];
   reflection: string;
+  repoUrl?: string;
+  repoLabel?: string;
   evidenceTitle?: string;
   evidenceNote?: string;
   evidence?: ProjectEvidence[];
@@ -82,27 +84,65 @@ export const projects: Project[] = [
     code: "VWB",
     year: "2026",
     title: "Voice Wings",
-    subtitle: "离线声控背包翅膀装置",
-    summary: "把语音识别、机械传动、舵机与 RGB 灯效装进可穿戴原型，验证互动表演装置的可行性。",
-    tags: ["硬件统筹", "ESP32", "离线语音", "原型制作"],
-    hero: "让静态装饰对声音做出回应，成为一个可互动、可表演的穿戴设备。",
-    problem: "常见角色扮演翅膀多为静态或手动控制，操作繁琐，也缺少动作、灯光与现场互动。",
+    subtitle: "离线声控可穿戴翅膀装置",
+    summary:
+      "面向舞台表演与角色扮演场景，把离线语音、舵机传动与 RGB 灯效整合进可穿戴机械翅膀，让装饰装置能听指令、能动起来、能发光。",
+    tags: ["硬件统筹", "ESP32", "LD3320", "舵机", "WS2812B"],
+    hero: "让声音成为开关：翅膀扇动、灯光变幻，把静态道具做成可互动的机电装置。",
+    problem:
+      "主流电商上的表演翅膀大多仍是静态装饰，或依赖手动开关。它们很难同时完成开合动作、灯效反馈与无需联网的语音互动，舞台表现力和玩法都被限制。",
     role:
-      "两人课程项目。本人负责全部硬件工作，包括电路设计与焊接、元器件和电源调试、机械结构制作及整机集成；队友负责主要软件开发。",
+      "在本项目中，我负责硬件侧全流程：电路设计与焊接、舵机与灯带布线、机械结构与翅膀骨架制作、材料加工，以及整机集成联调。协作同学负责软件开发：舵机动作与灯效控制、程序调试与软件优化。",
     decisions: [
-      "采用 LD3320 实现无需联网的语音控制",
-      "用 ESP32、舵机和 WS2812B 灯带组合动作与灯效",
-      "经历多次烧板与连接故障后，主动删减冗余模块",
-      "由面包板转为焊接板，并用轻质材料降低舵机负担",
+      "以 ESP32 作为主控，统一调度舵机 PWM、灯带单总线与语音模块通信",
+      "选用 LD3320 做离线语音识别，保证现场演示不依赖网络",
+      "用舵机驱动轻质翅膀骨架，搭配欧根纱等轻质材料，降低负载、保证可扇动",
+      "电源采用 7.4V 锂电池经降压模块供电，电路由洞洞板焊接，保留 Type-C 充电路径",
+      "固件主循环按 100ms 轮询语音指令，并分离正常扇动、慢速扇动、彩虹/闪烁/流水等灯效状态机",
     ],
     outcome: [
-      "完成可响应离线语音指令的穿戴式原型",
-      "实现翅膀开合、慢速扇动与多种灯光模式",
-      "在真实故障中完成元器件替换、电源与结构联调",
+      "完成可穿戴机电原型：离线语音触发、舵机扇动与 WS2812B 灯效同机运行",
+      "建立从结构草图、系统架构、焊接电路到固件主循环的完整设计链路",
+      "硬件侧完成背架、翅膀骨架、舵机安装、电源与控制板集成；软件侧完成多模式动作与灯光控制逻辑",
     ],
     reflection:
-      "原型证明核心交互可行，但外壳、耐用性和舒适度仍是明显短板。下一步会优先重做结构和供电安全，再谈更多灯效与动作。",
-    evidenceTitle: "项目影像",
-    evidenceNote: "影像素材待补充；当前先保留结构位，不虚构图片或成果。",
+      "这个项目最有价值的地方，是把“好看的装饰”拆成可落地的机电系统：结构承重、电源稳定、通信协议和交互状态要同时成立。后续若继续迭代，会优先优化外壳工艺、舵机扭矩与语音识别鲁棒性，让装置更适合长时间佩戴与舞台环境。",
+    repoUrl: "https://github.com/jinjiangy40/voice-controlled-wings",
+    repoLabel: "voice-controlled-wings",
+    evidenceTitle: "制作过程",
+    evidenceNote:
+      "从原型实物、结构草图、系统架构，到焊接电路与固件主循环，串联完整制作链路。",
+    evidence: [
+      {
+        kind: "image",
+        label: "01 / PROTOTYPE",
+        caption: "可穿戴原型：舵机驱动骨架 + 轻质翅膀织物与灯效",
+        src: "/projects/voice-wings/image1.jpeg",
+      },
+      {
+        kind: "image",
+        label: "02 / STRUCTURE",
+        caption: "机械结构草图：翅膀、连杆、舵机与电池布局",
+        src: "/projects/voice-wings/image5.png",
+      },
+      {
+        kind: "image",
+        label: "03 / ARCHITECTURE",
+        caption: "系统架构：ESP32 / LD3320 / 舵机 / 灯带 / 电源链路",
+        src: "/projects/voice-wings/image4.png",
+      },
+      {
+        kind: "image",
+        label: "04 / CIRCUIT",
+        caption: "焊接电路与电源模块：主控、语音模块与锂电池集成",
+        src: "/projects/voice-wings/image6.png",
+      },
+      {
+        kind: "image",
+        label: "05 / FIRMWARE",
+        caption: "固件主循环：语音轮询 + 扇动/灯效状态更新",
+        src: "/projects/voice-wings/image7.png",
+      },
+    ],
   },
 ];

@@ -16,6 +16,7 @@ export default async function ProjectPage({
   if (!project) notFound();
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
   const evidence = project.evidence ?? [];
+  const heroVisual = evidence.find((item) => item.kind === "image");
 
   return (
     <main className={`case-page ${project.slug}`}>
@@ -38,14 +39,29 @@ export default async function ProjectPage({
               <li key={t}>{t}</li>
             ))}
           </ul>
+          {project.repoUrl ? (
+            <p className="case-repo">
+              GitHub ·{" "}
+              <a href={project.repoUrl} target="_blank" rel="noreferrer">
+                {project.repoLabel ?? project.repoUrl}
+              </a>
+            </p>
+          ) : null}
         </div>
-        <div className="case-machine" aria-hidden="true">
-          <span>{project.code}</span>
-          <i />
-          <i />
-          <i />
-          <b>ACTIVE</b>
-        </div>
+        {heroVisual ? (
+          <figure className="case-hero-visual">
+            <img src={heroVisual.src} alt={heroVisual.caption} />
+            <figcaption>{heroVisual.caption}</figcaption>
+          </figure>
+        ) : (
+          <div className="case-machine" aria-hidden="true">
+            <span>{project.code}</span>
+            <i />
+            <i />
+            <i />
+            <b>ACTIVE</b>
+          </div>
+        )}
         <a href="#problem">向下解码 ↓</a>
       </section>
 
@@ -61,7 +77,7 @@ export default async function ProjectPage({
         <article>
           <h3>问题背景</h3>
           <p>{project.problem}</p>
-          <h3>我的角色</h3>
+          <h3>我负责的部分</h3>
           <p>{project.role}</p>
         </article>
       </section>
@@ -87,15 +103,19 @@ export default async function ProjectPage({
 
       <section className="case-panel evidence">
         <div className="section-head compact">
-          <p>03 / VISUAL EVIDENCE</p>
+          <p>03 / MAKING OF</p>
           <h2>
-            {project.evidenceTitle ?? "项目影像"}
+            {project.evidenceTitle ?? "制作过程"}
             <br />
-            {evidence.length ? "可复查的过程证据" : "等待补充"}
+            {evidence.length ? "从想法到原型的完整链路" : "等待补充"}
           </h2>
         </div>
         {project.evidenceNote ? <p className="evidence-note">{project.evidenceNote}</p> : null}
-        <div className={`evidence-grid ${evidence.length ? "has-media" : ""}`}>
+        <div
+          className={`evidence-grid ${evidence.length ? "has-media" : ""} ${
+            evidence.length >= 4 ? "dense" : ""
+          }`}
+        >
           {evidence.length
             ? evidence.map((item) =>
                 item.kind === "image" ? (
@@ -111,8 +131,12 @@ export default async function ProjectPage({
                     <span>{item.label}</span>
                     <div className="evidence-download-body">
                       <b>{item.caption}</b>
-                      <small>仓库私密，演示以可下载视频形式提供</small>
-                      <a className="button primary" href={item.src} download={item.downloadName ?? true}>
+                      <small>点击下载本地演示文件</small>
+                      <a
+                        className="button primary"
+                        href={item.src}
+                        download={item.downloadName ?? true}
+                      >
                         下载功能演示 ↓
                       </a>
                     </div>

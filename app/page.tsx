@@ -307,7 +307,11 @@ export default function Home() {
                   </span>
                   <b>{project.code}</b>
                   <small className="project-media-slot">
-                    {project.slug === "selectpc" ? "STREAMLIT HOME · SELECTPC" : "PROJECT IMAGE · 待补充"}
+                    {project.slug === "selectpc"
+                      ? "STREAMLIT HOME · SELECTPC"
+                      : project.slug === "voice-wings"
+                        ? "HARDWARE PROTOTYPE · VOICE WINGS"
+                        : "PROJECT IMAGE · 待补充"}
                   </small>
                 </div>
                 <article>
