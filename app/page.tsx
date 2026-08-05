@@ -8,7 +8,7 @@ const experiences = [
   ["2025", "上海金仕达 · FICC 产品部", "智能体竞品分析、功能复测、Bug 追踪与数据更新"],
   ["2024", "长沙顺通云科技", "官网重构测试与真实软件交付协作"],
   ["2023—NOW", "教育服务与校园市场", "累计签约 6 万元，运营约 200 人兼职社群"],
-  ["CAMPUS", "社团组织与校园赛事", "1×100 / 创新学生会 / 网交社：赞助、统筹、主持与解说"],
+  ["CAMPUS", "社团组织与校园赛事", "创新工程学生会 / 网交社 / 桌友汇等：赞助、办赛、主持与统筹"],
 ];
 
 const capabilities = [
@@ -37,36 +37,27 @@ const hubItems = [
   {
     title: "校园经历",
     en: "CAMPUS",
-    text: "社团组织、赛事统筹与现场表达：从会员成长到部长执行。",
+    text: "部长与干事岗位上的赞助拓展、赛事统筹、主持控场与公益落地。",
     target: 5,
   },
   {
     title: "课外拓展",
     en: "BEYOND CLASS",
-    text: "科学营、社群与公开表达，保持对真实世界的连接与好奇。",
+    text: "1×100 等校外成长：公开表达、教练带教与真实社群连接。",
     target: 7,
   },
 ];
 
 const campusClubs = [
   {
-    org: "1×100俱乐部",
-    role: "年度会员",
-    period: "2023.11 — 2026.05",
-    points: [
-      "15 期开眼计划优秀学员、17 期优秀教练员",
-      "多次在 50–60 人分享会中做经验分享与主题演讲",
-      "参与活动主持与策划，锻炼公开演讲和人际沟通",
-    ],
-  },
-  {
-    org: "创新学生会",
+    org: "创新工程学生会",
     role: "秘书部部长",
     period: "2024.09 — 2026.01",
     points: [
-      "统筹校内外赞助对接，协办烧烤派对、干事大会等大型活动（烧烤派对 200+ 人）",
-      "负责会议纪要、活动组织、破冰游戏与现场气氛调动",
-      "协助华为 ICT 大赛校内宣传、报名组织与流程对接",
+      "负责校内外赞助拓展：线下逐店拜访、商谈合作，推动资源落地活动",
+      "协办烧烤派对、干事大会等大型活动，其中烧烤派对到场 200+ 人",
+      "统筹会议纪要、活动组织、破冰设计与现场气氛调动",
+      "协助华为 ICT 大赛完成校内宣传、报名组织与流程对接",
     ],
   },
   {
@@ -74,9 +65,60 @@ const campusClubs = [
     role: "行政部部长",
     period: "2024.02 — 2026.01",
     points: [
-      "主导王者荣耀校际联赛、128 人金铲铲大赛等大型校园赛事",
-      "协助卓威奇亚 CS2 全国高校联赛、瓦洛兰特全澳高校赛统筹",
-      "担任金铲铲赛事主持、王者联赛解说；对接留学、雅思与零食品牌等长期赞助",
+      "多次组织并统筹王者荣耀高校联赛澳门赛区落地执行",
+      "担任校级金铲铲比赛总负责人，赛事参与累计 100+ 人",
+      "协助卓威奇亚 CS2 全国高校联赛、瓦洛兰特全澳高校赛等赛事统筹",
+      "担任金铲铲赛事主持、王者高校联赛主持 / 解说；完成数十家机构对接",
+      "对接留学、雅思、零食等长期赞助，保障社团持续办赛能力",
+    ],
+  },
+  {
+    org: "桌友汇",
+    role: "策划部干事",
+    period: "",
+    points: [
+      "撰写《社会服务十周年社团联展》《澳门四校狼王联赛》《2023 万圣节活动》等策划案",
+      "参与原创二次元大型剧本杀制作，从剧本到流程落地协作推进",
+      "万圣节活动担任 DM，现场引导 60+ 名学生完成完整体验",
+    ],
+  },
+  {
+    org: "音乐学会",
+    role: "主持人团干事",
+    period: "",
+    points: [
+      "入选并担任 2023 年校园歌手大赛总决赛主持人",
+      "临场处理突发状况，稳住节奏，保障决赛完整顺利进行",
+    ],
+  },
+  {
+    org: "宿舍先锋队",
+    role: "2024 届迎新志愿组组长",
+    period: "",
+    points: [
+      "参与开展校园反诈宣传、消防演练、医疗急救等安全教育实务",
+      "赴警局、消防局开展业务参观学习，并将所学用于活动组织与宣讲落地",
+      "策划并组织手工日、安全教育日等主题公益活动",
+      "担任 2024 届迎新志愿组组长，统筹分工、带队完成新生接待与服务",
+    ],
+  },
+  {
+    org: "其他社团干事",
+    role: "干事岗位",
+    period: "",
+    points: ["精武社财务部干事、魔术社运营部干事、羽毛球社外联部干事"],
+  },
+];
+
+const beyondItems = [
+  {
+    org: "1×100俱乐部",
+    role: "年度会员",
+    period: "2023.11 — 2026.05",
+    points: [
+      "15 期开眼计划优秀学员、17 期优秀教练员",
+      "多次在 50–60 人分享会做经验分享与主题演讲",
+      "参与活动主持与策划，持续锻炼公开表达与组织协作",
     ],
   },
 ];
@@ -317,7 +359,7 @@ export default function Home() {
               <br />
               在现场练表达
             </h2>
-            <p>从会员成长到部长执行：赞助对接、赛事统筹、主持解说与大型活动落地。</p>
+            <p>部长与干事岗位上的赞助拓展、赛事统筹、主持控场与公益落地。</p>
           </div>
           <div className="campus-clubs">
             {campusClubs.map((club, i) => (
@@ -326,7 +368,7 @@ export default function Home() {
                 <header>
                   <h3>{club.org}</h3>
                   <strong>{club.role}</strong>
-                  <time>{club.period}</time>
+                  {club.period ? <time>{club.period}</time> : null}
                 </header>
                 <ul>
                   {club.points.map((point) => (
@@ -369,29 +411,34 @@ export default function Home() {
         </section>
 
         <section className={`slide deck-human ${current === 7 ? "is-active" : ""}`} aria-hidden={current !== 7}>
-          <div className="slide-label">07 / HUMAN LAYER</div>
+          <div className="slide-label">07 / BEYOND CAMPUS</div>
           <div className="deck-title">
             <h2>
-              产品之外
+              校外成长
               <br />
-              保持表达、连接与好奇
+              把表达练成能力
             </h2>
+            <p>在 1×100 等校外场域里做分享、带教与主持，持续对接真实人群与真实反馈。</p>
           </div>
-          <div className="deck-human-grid">
-            <article>
-              <span>VOICE</span>
-              <h3>主持与公开表达</h3>
-              <p>在舞台、分享会和活动现场中，练习把复杂信息变得清楚、有感染力。</p>
-            </article>
-            <article>
-              <span>COMMUNITY</span>
-              <h3>社群与真实连接</h3>
-              <p>对接学生、商家与活动参与者，在长期互动中理解需求并建立信任。</p>
-            </article>
-            <article>
-              <span>EXPLORE</span>
-              <h3>持续探索</h3>
-              <p>从计算城市科学营到软硬件原型，愿意进入陌生领域，快速建立理解。</p>
+          <div className="beyond-list">
+            {beyondItems.map((item, i) => (
+              <article key={item.org} className="beyond-item">
+                <span>0{i + 1}</span>
+                <header>
+                  <h3>{item.org}</h3>
+                  <strong>{item.role}</strong>
+                  {item.period ? <time>{item.period}</time> : null}
+                </header>
+                <ul>
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+            <article className="beyond-note">
+              <span>NOTE</span>
+              <p>同时保持对科学营、软硬件原型与商业社群的持续探索，愿意进入陌生领域并快速建立理解。</p>
             </article>
           </div>
         </section>
