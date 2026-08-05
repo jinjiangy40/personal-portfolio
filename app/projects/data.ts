@@ -145,4 +145,58 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "slidefix",
+    code: "SFX",
+    year: "2026",
+    title: "SlideFix",
+    subtitle: "微信小程序 · PPT 交稿助手",
+    summary:
+      "面向实习汇报、小组作业与日常交稿场景，把 PPT 清理与页管理做成“先预览、再处理”的微信小程序流程，减少一点就改、改错难撤回的风险。",
+    tags: ["微信小程序", "FastAPI", "Python", "PPTX", "产品设计"],
+    hero: "交稿前先看清会改什么：去动画、清备注、管页面，确认后再下载结果。",
+    problem:
+      "实习汇报、课程作业或客户交稿前，PPT 里常残留切换动画、演讲者备注、作者信息，或页数过多需要拆开。用户往往要在 WPS/Office 里手动逐项清理，既费时也容易漏。",
+    role:
+      "个人公开项目（GitHub：jinjiangy40/slidefix）。我负责产品流程与端到端实现：微信小程序前端（首页 / 预览 / 结果 / 我的）、FastAPI 处理服务，以及 ppt_tools 核心清理与页管理逻辑；另保留桌面端与命令行路径便于本地验证。",
+    decisions: [
+      "把主流程设计成“选文件 → 设选项 → 预览变更计划 → 确认处理 → 下载”，避免批量误改",
+      "交稿清理聚焦去切换/动画、清备注与批注、清作者属性、删隐藏页；字体调整作为可选项",
+      "页管理支持按关键词删除/保留，以及按每 N 页或指定起始页拆分文稿",
+      "小程序负责交互与上传，实际改文件放在服务端 ppt_tools 流水线，便于复用 CLI 与桌面版",
+      "仅支持 .pptx，并在文档中明确真机联调需配置 HTTPS 合法域名",
+    ],
+    outcome: [
+      "完成可联调的微信小程序原型（展示版本 v0.3.0）：首页、预览、结果、我的四页流程打通",
+      "实现预览接口与确认处理接口：先返回 changePlan，再执行清理 / 删页 / 拆分并下载 pptx 或 zip",
+      "沉淀公开仓库、联调文档与发布清单，方便复查与后续正式上线配置",
+    ],
+    reflection:
+      "这个项目最重要的产品判断，是把“批处理能力”收进可确认的预览步骤。清理功能本身不难堆，难的是让用户在改之前看见后果。后续若正式上线，会优先补齐公网 HTTPS、隐私说明与真机验收，而不是继续盲目加功能。",
+    repoUrl: "https://github.com/jinjiangy40/slidefix",
+    repoLabel: "jinjiangy40/slidefix",
+    evidenceTitle: "产品结构",
+    evidenceNote:
+      "以下为应用图标、安全流程示意与系统架构示意；源码与说明见公开 GitHub 仓库。",
+    evidence: [
+      {
+        kind: "image",
+        label: "01 / APP ICON",
+        caption: "SlideFix 小程序应用图标",
+        src: "/projects/slidefix/app-icon.png",
+      },
+      {
+        kind: "image",
+        label: "02 / SAFE FLOW",
+        caption: "安全流程：选文件 → 预览计划 → 确认处理 → 下载",
+        src: "/projects/slidefix/flow.svg",
+      },
+      {
+        kind: "image",
+        label: "03 / ARCHITECTURE",
+        caption: "系统结构：小程序前端 · FastAPI · ppt_tools 核心",
+        src: "/projects/slidefix/architecture.svg",
+      },
+    ],
+  },
 ];

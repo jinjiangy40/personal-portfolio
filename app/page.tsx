@@ -8,7 +8,7 @@ const experiences = [
   ["2025", "上海金仕达 · FICC 产品部", "智能体竞品分析、功能复测、Bug 追踪与数据更新"],
   ["2024", "长沙顺通云科技", "官网重构测试与真实软件交付协作"],
   ["2023—NOW", "教育服务与校园市场", "累计签约 6 万元，运营约 200 人兼职社群"],
-  ["CAMPUS", "活动、赛事与学生组织", "主持 300 人活动，独立执行 100+ 人校园赛事"],
+  ["CAMPUS", "社团组织与校园赛事", "1×100 / 创新学生会 / 网交社：赞助、统筹、主持与解说"],
 ];
 
 const capabilities = [
@@ -37,7 +37,7 @@ const hubItems = [
   {
     title: "校园经历",
     en: "CAMPUS",
-    text: "这一章先留空，等校园经历素材补充后再完整展开。",
+    text: "社团组织、赛事统筹与现场表达：从会员成长到部长执行。",
     target: 5,
   },
   {
@@ -45,6 +45,39 @@ const hubItems = [
     en: "BEYOND CLASS",
     text: "科学营、社群与公开表达，保持对真实世界的连接与好奇。",
     target: 7,
+  },
+];
+
+const campusClubs = [
+  {
+    org: "1×100俱乐部",
+    role: "年度会员",
+    period: "2023.11 — 2026.05",
+    points: [
+      "15 期开眼计划优秀学员、17 期优秀教练员",
+      "多次在 50–60 人分享会中做经验分享与主题演讲",
+      "参与活动主持与策划，锻炼公开演讲和人际沟通",
+    ],
+  },
+  {
+    org: "创新学生会",
+    role: "秘书部部长",
+    period: "2024.09 — 2026.01",
+    points: [
+      "统筹校内外赞助对接，协办烧烤派对、干事大会等大型活动（烧烤派对 200+ 人）",
+      "负责会议纪要、活动组织、破冰游戏与现场气氛调动",
+      "协助华为 ICT 大赛校内宣传、报名组织与流程对接",
+    ],
+  },
+  {
+    org: "网络文化交流社",
+    role: "行政部部长",
+    period: "2024.02 — 2026.01",
+    points: [
+      "主导王者荣耀校际联赛、128 人金铲铲大赛等大型校园赛事",
+      "协助卓威奇亚 CS2 全国高校联赛、瓦洛兰特全澳高校赛统筹",
+      "担任金铲铲赛事主持、王者联赛解说；对接留学、雅思与零食品牌等长期赞助",
+    ],
   },
 ];
 
@@ -177,8 +210,8 @@ export default function Home() {
           </div>
           <div className="identity-board">
             <figure className="dossier-photo">
-              <img src="/yuan-jinjiang-portrait.jpg" alt="袁锦江个人档案照片" />
-              <figcaption>OFFICIAL PORTRAIT / YJJ · 2026</figcaption>
+              <img src="/yuan-jinjiang-pixel.png" alt="袁锦江像素肖像" />
+              <figcaption>PIXEL PORTRAIT / YJJ · 2026</figcaption>
             </figure>
             <div className="identity-tiles">
               {identityTiles.map((tile) => (
@@ -278,14 +311,30 @@ export default function Home() {
 
         <section className={`slide deck-campus ${current === 5 ? "is-active" : ""}`} aria-hidden={current !== 5}>
           <div className="slide-label">05 / CAMPUS CHAPTER</div>
-          <div className="campus-placeholder">
-            <p className="eyebrow">WAITING FOR SOURCE</p>
+          <div className="deck-title">
             <h2>
-              校园经历
+              在组织里练推进
               <br />
-              这一章先留白
+              在现场练表达
             </h2>
-            <p>内容稍后由你补充。当前只保留占位，不再跳转到履历页。</p>
+            <p>从会员成长到部长执行：赞助对接、赛事统筹、主持解说与大型活动落地。</p>
+          </div>
+          <div className="campus-clubs">
+            {campusClubs.map((club, i) => (
+              <article key={club.org} className="campus-club">
+                <span>0{i + 1}</span>
+                <header>
+                  <h3>{club.org}</h3>
+                  <strong>{club.role}</strong>
+                  <time>{club.period}</time>
+                </header>
+                <ul>
+                  {club.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </section>
 
