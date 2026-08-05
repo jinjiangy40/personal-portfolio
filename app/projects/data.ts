@@ -13,6 +13,8 @@ export type Project = {
   title: string;
   subtitle: string;
   summary: string;
+  /** 首页作品卡：一句话说清解决什么问题 */
+  hook: string;
   tags: string[];
   hero: string;
   problem: string;
@@ -36,6 +38,7 @@ export const projects: Project[] = [
     subtitle: "硬件智能对比与决策工具",
     summary:
       "面向选购电脑硬件的用户，把分散的 CPU、GPU、内存、主板参数组织成可搜索、可比较、可解释的选择流程。",
+    hook: "解决：硬件参数散落多站，普通用户很难形成可解释的装机结论。",
     tags: ["产品设计", "Python", "Streamlit", "SQLite", "课程项目"],
     hero: "从“查参数”到“做决定”，减少用户在电商、评测与论坛之间反复切换的成本。",
     problem:
@@ -87,6 +90,7 @@ export const projects: Project[] = [
     subtitle: "离线声控可穿戴翅膀装置",
     summary:
       "面向舞台表演与角色扮演场景，把离线语音、舵机传动与 RGB 灯效整合进可穿戴机械翅膀，让装饰装置能听指令、能动起来、能发光。",
+    hook: "解决：表演翅膀多为静态装饰，难以离线声控、联动灯效与动作。",
     tags: ["硬件统筹", "ESP32", "LD3320", "舵机", "WS2812B"],
     hero: "让声音成为开关：翅膀扇动、灯光变幻，把静态道具做成可互动的机电装置。",
     problem:
@@ -153,6 +157,7 @@ export const projects: Project[] = [
     subtitle: "微信小程序 · PPT 交稿助手",
     summary:
       "面向实习汇报、小组作业与日常交稿场景，把 PPT 清理与页管理做成“先预览、再处理”的微信小程序流程，减少一点就改、改错难撤回的风险。",
+    hook: "解决：交稿前清理 PPT 动画/备注费时易漏，改错又难撤回。",
     tags: ["微信小程序", "FastAPI", "Python", "PPTX", "产品设计"],
     hero: "交稿前先看清会改什么：去动画、清备注、管页面，确认后再下载结果。",
     problem:
