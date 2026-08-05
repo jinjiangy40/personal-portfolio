@@ -26,7 +26,7 @@ const capabilities = [
 ];
 
 // 顺序：能力放在导航前，线性浏览时不会被四个入口跳过
-const slideNames = ["开场", "档案", "能力", "导航", "经历", "校园", "作品", "个人", "联系"];
+const slideNames = ["开场", "档案", "能力", "导航", "经历", "校园", "作品", "成长", "联系"];
 
 const hubItems = [
   {
@@ -48,9 +48,9 @@ const hubItems = [
     target: 5,
   },
   {
-    title: "课外拓展",
-    en: "BEYOND CLASS",
-    text: "1×100 等校外成长：公开表达、教练带教与真实社群连接。",
+    title: "校外成长",
+    en: "BEYOND CAMPUS",
+    text: "科学营与 1×100：跨学科 AI 学习、公开表达与真实社群连接。",
     target: 7,
   },
 ];
@@ -118,6 +118,18 @@ const campusClubs = [
 ];
 
 const beyondItems = [
+  {
+    org: "哈工大计算机城市科学营",
+    role: "澳科大推荐学员",
+    period: "",
+    points: [
+      "以澳门科技大学推荐学员身份，参与哈工大举办的跨学科 AI 应用主题科学营",
+      "本校共获 13 个推荐名额；营员涵盖本科、硕士、博士，与港澳其他高校硕博研究生共同学习交流",
+      "课题一：建筑学与设计学中 AI 模型训练的优化实践",
+      "课题二：城市历史空间中的字体设计与智能化应用研究",
+      "学习前沿 AI 应用思路，提升跨学科项目协作与科研思维能力",
+    ],
+  },
   {
     org: "1×100俱乐部",
     role: "年度会员",
@@ -432,9 +444,9 @@ export default function Home() {
             <h2>
               校外成长
               <br />
-              把表达练成能力
+              把学习变成能力
             </h2>
-            <p>在 1×100 等校外场域里做分享、带教与主持，持续对接真实人群与真实反馈。</p>
+            <p>在科学营与 1×100 等校外场域里学习、表达与协作，持续对接真实问题与真实反馈。</p>
           </div>
           <div className="beyond-list">
             {beyondItems.map((item, i) => (
@@ -454,7 +466,7 @@ export default function Home() {
             ))}
             <article className="beyond-note">
               <span>NOTE</span>
-              <p>同时保持对科学营、软硬件原型与商业社群的持续探索，愿意进入陌生领域并快速建立理解。</p>
+              <p>愿意进入陌生领域并快速建立理解：从跨学科 AI 应用到公开表达与社群协作，持续补齐产品所需的综合能力。</p>
             </article>
           </div>
         </section>
