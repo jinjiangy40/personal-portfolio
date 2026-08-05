@@ -270,7 +270,7 @@ export default function Home() {
           <figure className="hero-portrait">
             <img src="/yuan-jinjiang-portrait.jpg" alt="袁锦江黑白个人写真" />
             <figcaption>
-              <span>PORTRAIT / 001</span>
+              <span>PORTRAIT</span>
               <b>YJJ · 21</b>
               <small>CHANGSHA → HENGQIN</small>
             </figcaption>
