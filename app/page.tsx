@@ -50,7 +50,7 @@ const hubItems = [
   {
     title: "校外成长",
     en: "BEYOND CAMPUS",
-    text: "科学营与 1×100：跨学科 AI 学习、公开表达与真实社群连接。",
+    text: "科学营、树成林与 1×100：AI 实战、公开表达与真实社群连接。",
     target: 7,
   },
 ];
@@ -118,6 +118,15 @@ const campusClubs = [
 ];
 
 const beyondItems = [
+  {
+    org: "树成林教育 · AI 商业实战社群",
+    role: "学员",
+    period: "2026.06 — 至今",
+    points: [
+      "参与社群共学与交流，把 AI 能力落到可复用的实操闭环",
+      "持续跟进多场景 AI 应用练习，补齐从工具到落地的判断",
+    ],
+  },
   {
     org: "哈工大计算机城市科学营",
     role: "澳科大推荐学员",
@@ -446,7 +455,7 @@ export default function Home() {
               <br />
               把学习变成能力
             </h2>
-            <p>在科学营与 1×100 等校外场域里学习、表达与协作，持续对接真实问题与真实反馈。</p>
+            <p>在树成林、科学营与 1×100 等校外场域里学习、表达与协作，持续对接真实问题与真实反馈。</p>
           </div>
           <div className="beyond-list">
             {beyondItems.map((item, i) => (
