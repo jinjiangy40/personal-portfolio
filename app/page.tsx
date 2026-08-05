@@ -108,8 +108,7 @@ const campusClubs = [
   },
 ];
 
-const campusMore =
-  "另参与精武社财务部干事、魔术社运营部干事、羽毛球社外联部干事，持续练组织协作与现场表达。";
+const campusMore = "另参与精武社财务部干事、魔术社运营部干事、羽毛球社外联部干事。";
 
 const beyondItems = [
   {
@@ -204,7 +203,7 @@ export default function Home() {
   }, [total]);
 
   const advanceOnCanvas = (event: React.MouseEvent<HTMLElement>) => {
-    if ((event.target as HTMLElement).closest("a,button,nav,header")) return;
+    if ((event.target as HTMLElement).closest("a,button,nav,header,.campus-clubs,.beyond-list,.deck-records")) return;
     if (event.clientX < window.innerWidth * 0.28) prev();
     else next();
   };
@@ -381,7 +380,6 @@ export default function Home() {
               <br />
               在现场练表达
             </h2>
-            <p>部长统筹、赛事落地之外，也保留策划与主持等现场能力。</p>
           </div>
           <div className="campus-clubs">
             {campusClubs.map((club, i) => (
@@ -414,7 +412,6 @@ export default function Home() {
               <br />
               把学习变成能力
             </h2>
-            <p>在科学营、树成林与 1×100 里学习、表达与协作。</p>
           </div>
           <div className="beyond-list">
             {beyondItems.map((item, i) => (
