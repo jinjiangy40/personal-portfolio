@@ -199,3 +199,6 @@ h1,h2,h3,.deck-copy h1,.deck-title h2,.hub-copy h2,.deck-contact h2,.campus-plac
     max-height:none;
   }
 }
+.deck-records ul{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:4px}
+.deck-records li{position:relative;padding-left:12px;color:#586577;font-size:13px;line-height:1.5}
+.deck-records li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--blue)}
