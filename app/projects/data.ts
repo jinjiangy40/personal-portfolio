@@ -41,7 +41,7 @@ export const projects: Project[] = [
     problem:
       "懂一点硬件、但缺少专业判断的用户，常常要在多个站点之间来回对比性能与价格，仍难以形成清楚、可解释的配置结论。",
     role:
-      "BSAI301 软件工程与项目管理课程项目。本人参与核心功能实现、硬件数据库整理、对比与可视化相关能力，以及 Web 交互版本推进；因课程要求源码暂不公开，下方用界面与演示材料呈现项目过程。",
+      "BSAI301 软件工程与项目管理课程项目。本人参与核心功能实现、硬件数据库整理、对比与可视化，以及 Web 交互版本推进。",
     decisions: [
       "将 CPU、GPU、RAM、主板等信息统一进入本地数据层，支持搜索与分页浏览",
       "围绕“硬件搜索 / 硬件对比 / AI 咨询”组织功能，而不是堆砌孤立页面",
@@ -54,9 +54,9 @@ export const projects: Project[] = [
       "保留课程文档、实现计划与演示视频，方便复查项目过程",
     ],
     reflection:
-      "最大收获不是堆叠功能，而是把“用户如何做硬件决策”拆成可验证流程。课程作业源码暂不公开，所以这里用界面截图、仓库截图和演示视频，把项目过程讲清楚。",
+      "最大收获不是堆叠功能，而是把“用户如何做硬件决策”拆成可验证流程：先统一数据，再对比解释，最后才落到推荐。做完之后更清楚——产品判断要落在用户真正卡住的那一步，而不是功能清单有多长。",
     evidenceTitle: "项目材料",
-    evidenceNote: "课程仓库暂不公开链接；以下为界面截图、仓库截图与功能演示下载。",
+    evidenceNote: "以下为产品界面、过程材料与功能演示。",
     evidence: [
       {
         kind: "image",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       {
         kind: "image",
         label: "02 / PRIVATE REPO",
-        caption: "GitHub Classroom 私有仓截图（课程作业，无法公开访问）",
+        caption: "课程协作仓库截图",
         src: "/projects/selectpc/github-repo.png",
       },
       {
@@ -175,26 +175,26 @@ export const projects: Project[] = [
       "这个项目最重要的产品判断，是把“批处理能力”收进可确认的预览步骤。清理功能本身不难堆，难的是让用户在改之前看见后果。后续若正式上线，会优先补齐公网 HTTPS、隐私说明与真机验收，而不是继续盲目加功能。",
     repoUrl: "https://github.com/jinjiangy40/slidefix",
     repoLabel: "jinjiangy40/slidefix",
-    evidenceTitle: "产品结构",
-    evidenceNote: "以下为应用图标与产品流程示意；完整说明见我的项目主页与公开源码。",
+    evidenceTitle: "产品界面",
+    evidenceNote: "以下为微信小程序关键界面截图。",
     evidence: [
       {
         kind: "image",
-        label: "01 / APP ICON",
-        caption: "SlideFix 小程序应用图标",
-        src: "/projects/slidefix/app-icon.png",
+        label: "01 / HOME",
+        caption: "首页：先预览再处理，选择文件并配置清理项",
+        src: "/projects/slidefix/ui-home.png",
       },
       {
         kind: "image",
-        label: "02 / SAFE FLOW",
-        caption: "安全流程：选文件 → 预览计划 → 确认处理 → 下载",
-        src: "/projects/slidefix/flow.png",
+        label: "02 / CLEAN",
+        caption: "清理选项：去切换、去动画、清备注与作者信息等",
+        src: "/projects/slidefix/ui-clean.png",
       },
       {
         kind: "image",
-        label: "03 / ARCHITECTURE",
-        caption: "系统结构：小程序前端 · FastAPI · ppt_tools 核心",
-        src: "/projects/slidefix/architecture.png",
+        label: "03 / PAGES",
+        caption: "页管理：按关键词删留页面，或拆成多个文件",
+        src: "/projects/slidefix/ui-pages.png",
       },
     ],
   },
