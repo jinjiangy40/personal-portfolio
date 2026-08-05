@@ -15,7 +15,7 @@ const experiences = [
   [
     "2023.09~至今",
     "教育服务与校园市场",
-    "校园大使签约启德、信华、新东方、紫藤、留学匠、环球、高顿等机构，并持续拓展其他教育合作；累计签约约 6 万元，运营约 200 人兼职社群",
+    "以校园大使形式对接多家教育机构（签约含启德、信华、新东方、紫藤、留学匠、环球、高顿等），覆盖语言培训与留学咨询多种场景；累计签约 10 万元+，运营多个 200+ 人兼职社群",
   ],
 ];
 
@@ -226,7 +226,9 @@ export default function Home() {
             <p className="eyebrow">AI PRODUCT INTERN · 2026 / 27 · CLASS OF 2023</p>
             <h1>
               <small>袁锦江</small>
-              把技术理解，变成真实可用的产品
+              把技术理解，
+              <br />
+              变成真实可用的产品
             </h1>
             <p>
               澳门科技大学人工智能本科生（2023 级）。关注 AI 如何进入真实工作流，也在一次次原型、沟通与交付中学习产品判断。
@@ -248,7 +250,7 @@ export default function Home() {
             <img src="/yuan-jinjiang-portrait.jpg" alt="袁锦江黑白个人写真" />
             <figcaption>
               <span>PORTRAIT / 001</span>
-              <b>YJJIANG · 21</b>
+              <b>YJJ · 21</b>
               <small>CHANGSHA → HENGQIN</small>
             </figcaption>
             <div className="portrait-scan" aria-hidden="true" />
