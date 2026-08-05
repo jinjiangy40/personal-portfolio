@@ -6,19 +6,23 @@ import { projects } from "./projects/data";
 
 const experiences = [
   [
-    "2026.06—08",
+    "2026.06~2026.08",
     "湖南中南智能装备",
     "参与国家项目「基于工艺知识图谱的离线编程软件」：完成工艺/材料数据清洗与结构化；搭建焊接工艺知识问答与参数查表流程；整理工艺文档并维护知识库更新；协助验证大模型检索与工艺推荐效果",
   ],
-  ["2025", "上海金仕达 · FICC 产品部", "智能体竞品分析、功能复测、Bug 追踪与数据更新"],
-  ["2024", "长沙顺通云科技", "官网重构测试与真实软件交付协作"],
-  ["2023—NOW", "教育服务与校园市场", "累计签约 6 万元，运营约 200 人兼职社群"],
+  ["2025.06~2025.08", "上海金仕达 · FICC 产品部", "智能体竞品分析、功能复测、Bug 追踪与数据更新"],
+  ["2024.06~2024.08", "长沙顺通云科技", "官网重构测试与真实软件交付协作"],
+  [
+    "2023.09~至今",
+    "教育服务与校园市场",
+    "校园大使签约启德、信华、新东方、紫藤、留学匠、环球、高顿等机构，并持续拓展其他教育合作；累计签约约 6 万元，运营约 200 人兼职社群",
+  ],
 ];
 
 const capabilities = [
-  ["01", "AI 产品与需求", "把模糊需求拆成可验证的问题、功能与迭代路径。", "金仕达智能体 / SelectPC"],
-  ["02", "技术理解与原型", "理解软件、数据与工业场景边界，动手完成可验证的数据处理与原型链路。", "工业知识图谱 / Python"],
-  ["03", "商业沟通与连接", "从真实沟通中识别动机，用清楚表达推动选择。", "校园市场 / 社群"],
+  ["01", "产品需求", "把模糊需求拆成可验证的问题、功能与迭代路径。"],
+  ["02", "技术原型", "理解软件、数据与工业场景边界，动手完成可验证的数据处理与原型链路。"],
+  ["03", "商业沟通", "从真实沟通中识别动机，用清楚表达推动选择。"],
 ];
 
 // 顺序：能力放在导航前，线性浏览时不会被四个入口跳过
@@ -26,8 +30,8 @@ const slideNames = ["开场", "档案", "能力", "导航", "经历", "校园", 
 
 const hubItems = [
   {
-    title: "我的项目库",
-    en: "PROJECT ARCHIVE",
+    title: "我的项目",
+    en: "PROJECTS",
     text: "产品、软件与硬件原型，以及每次真实落地后的判断与反思。",
     target: 6,
   },
@@ -210,7 +214,7 @@ export default function Home() {
         <span>
           {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")} · {slideNames[current]}
         </span>
-        <a href="mailto:1230017371@student.must.edu.mo" className="status">
+        <a href="mailto:jinjiangy40@gmail.com" className="status">
           <i /> OPEN TO INTERN
         </a>
       </header>
@@ -219,15 +223,23 @@ export default function Home() {
         <section className={`slide deck-hero ${current === 0 ? "is-active" : ""}`} aria-hidden={current !== 0}>
           <div className="grid" aria-hidden="true" />
           <div className="deck-copy">
-            <p className="eyebrow">AI PRODUCT INTERN · 2026 / 27</p>
+            <p className="eyebrow">AI PRODUCT INTERN · 2026 / 27 · CLASS OF 2023</p>
             <h1>
               <small>袁锦江</small>
-              把技术理解，
-              <em>变成真实可用的产品</em>
+              把技术理解，变成真实可用的产品
             </h1>
             <p>
-              澳门科技大学人工智能本科生。关注 AI 如何进入真实工作流，也在一次次原型、沟通与交付中学习产品判断。
+              澳门科技大学人工智能本科生（2023 级）。关注 AI 如何进入真实工作流，也在一次次原型、沟通与交付中学习产品判断。
             </p>
+            <div className="hero-contact">
+              <a href="tel:17765960611">17765960611</a>
+              <span aria-hidden="true">·</span>
+              <a href="mailto:jinjiangy40@gmail.com">jinjiangy40@gmail.com</a>
+              <span aria-hidden="true">·</span>
+              <a href="/yuan-jinjiang-resume.pdf" download>
+                下载脱敏简历
+              </a>
+            </div>
             <button className="button primary" onClick={next}>
               点击进入档案 →
             </button>
@@ -283,12 +295,11 @@ export default function Home() {
             </h2>
           </div>
           <div className="deck-cap-grid">
-            {capabilities.map(([n, t, d, e]) => (
+            {capabilities.map(([n, t, d]) => (
               <article key={n}>
                 <span>{n}</span>
                 <h3>{t}</h3>
                 <p>{d}</p>
-                <small>项目 · {e}</small>
               </article>
             ))}
           </div>
@@ -455,11 +466,11 @@ export default function Home() {
           </h2>
           <p>目标方向 · AI 产品实习 / 产品实习</p>
           <div className="deck-contact-links">
-            <a href="mailto:1230017371@student.must.edu.mo">职业邮箱 ↗</a>
+            <a href="tel:17765960611">电话 · 17765960611</a>
+            <a href="mailto:jinjiangy40@gmail.com">邮箱 · jinjiangy40@gmail.com</a>
             <a href="/yuan-jinjiang-resume.pdf" download>
               下载脱敏简历 ↓
             </a>
-            <span>GitHub / LinkedIn · 待补充</span>
           </div>
         </section>
       </div>

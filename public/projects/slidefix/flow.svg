@@ -1,30 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" fill="none">
-  <rect width="1200" height="720" fill="#0a1426"/>
-  <rect x="40" y="40" width="1120" height="640" rx="8" stroke="rgba(105,151,211,0.35)" fill="#0d1a30"/>
-  <text x="80" y="110" fill="#16d8ff" font-family="Consolas, monospace" font-size="22" letter-spacing="4">SLIDEFIX � SAFE FLOW</text>
-  <text x="80" y="168" fill="#e8edf0" font-family="Georgia, serif" font-size="42">H���</text>
-  <text x="80" y="214" fill="#8da0b8" font-family="Arial, sans-serif" font-size="20">	�� � �	y � ����� � n� � }Ӝ</text>
-  <g font-family="Arial, sans-serif">
-    <rect x="80" y="300" width="180" height="160" rx="6" fill="#12233d" stroke="#1667ff"/>
-    <text x="170" y="370" text-anchor="middle" fill="#16d8ff" font-size="18">01</text>
-    <text x="170" y="410" text-anchor="middle" fill="#e8edf0" font-size="24">	��</text>
-    <text x="170" y="442" text-anchor="middle" fill="#8da0b8" font-size="16">.pptx</text>
-    <path d="M275 380 H315" stroke="#16d8ff" stroke-width="2"/>
-    <rect x="330" y="300" width="180" height="160" rx="6" fill="#12233d" stroke="#1667ff"/>
-    <text x="420" y="370" text-anchor="middle" fill="#16d8ff" font-size="18">02</text>
-    <text x="420" y="410" text-anchor="middle" fill="#e8edf0" font-size="24">�	y</text>
-    <text x="420" y="442" text-anchor="middle" fill="#8da0b8" font-size="16"> / u�</text>
-    <path d="M525 380 H565" stroke="#16d8ff" stroke-width="2"/>
-    <rect x="580" y="300" width="180" height="160" rx="6" fill="#12233d" stroke="#ff7a1a"/>
-    <text x="670" y="370" text-anchor="middle" fill="#ff7a1a" font-size="18">03</text>
-    <text x="670" y="410" text-anchor="middle" fill="#e8edf0" font-size="24">�ȡ</text>
-    <text x="670" y="442" text-anchor="middle" fill="#8da0b8" font-size="16">9�H</text>
-    <path d="M775 380 H815" stroke="#16d8ff" stroke-width="2"/>
-    <rect x="830" y="300" width="250" height="160" rx="6" fill="#12233d" stroke="#1667ff"/>
-    <text x="955" y="370" text-anchor="middle" fill="#16d8ff" font-size="18">04</text>
-    <text x="955" y="410" text-anchor="middle" fill="#e8edf0" font-size="24">n�v}</text>
-    <text x="955" y="442" text-anchor="middle" fill="#8da0b8" font-size="16">pptx / zip</text>
-  </g>
-  <text x="80" y="560" fill="#8da0b8" font-family="Consolas, monospace" font-size="16">MINIPROGRAM � FASTAPI � PPT_TOOLS</text>
-  <text x="80" y="600" fill="#65748a" font-family="Consolas, monospace" font-size="14">PUBLIC REPO � jinjiangy40/slidefix � v0.3.0</text>
-</svg>

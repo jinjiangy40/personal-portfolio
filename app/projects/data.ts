@@ -30,7 +30,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "selectpc",
-    code: "SPC",
+    code: "SEL",
     year: "2026",
     title: "SelectPC",
     subtitle: "硬件智能对比与决策工具",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     problem:
       "懂一点硬件、但缺少专业判断的用户，常常要在多个站点之间来回对比性能与价格，仍难以形成清楚、可解释的配置结论。",
     role:
-      "BSAI301 软件工程与项目管理课程项目（GitHub Classroom 私有仓）。本人参与核心功能实现、硬件数据库整理、对比与可视化相关能力，以及 Web 交互版本推进；仓库因课程要求保持私密，下方提供仓库截图作为项目存在证明。",
+      "BSAI301 软件工程与项目管理课程项目。本人参与核心功能实现、硬件数据库整理、对比与可视化相关能力，以及 Web 交互版本推进；因课程要求源码暂不公开，下方用界面与演示材料呈现项目过程。",
     decisions: [
       "将 CPU、GPU、RAM、主板等信息统一进入本地数据层，支持搜索与分页浏览",
       "围绕“硬件搜索 / 硬件对比 / AI 咨询”组织功能，而不是堆砌孤立页面",
@@ -51,12 +51,12 @@ export const projects: Project[] = [
     outcome: [
       "完成 SelectPC v1.0 原型：首页、硬件搜索与对比主流程可运行",
       "支持 CPU、GPU、RAM、主板等品类的参数查看与多维对比",
-      "保留课程文档、实现计划与演示视频，形成可复查的项目证据链",
+      "保留课程文档、实现计划与演示视频，方便复查项目过程",
     ],
     reflection:
-      "最大收获不是堆叠功能，而是把“用户如何做硬件决策”拆成可验证流程。仓库因课程作业保持私密，所以作品集用界面截图、仓库截图和演示视频下载来呈现证据，而不是公开源码地址。",
-    evidenceTitle: "项目证据",
-    evidenceNote: "仓库为课程私有库，无法公开链接；以下为界面截图、仓库截图与功能演示下载。",
+      "最大收获不是堆叠功能，而是把“用户如何做硬件决策”拆成可验证流程。课程作业源码暂不公开，所以这里用界面截图、仓库截图和演示视频，把项目过程讲清楚。",
+    evidenceTitle: "项目材料",
+    evidenceNote: "课程仓库暂不公开链接；以下为界面截图、仓库截图与功能演示下载。",
     evidence: [
       {
         kind: "image",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
   },
   {
     slug: "voice-wings",
-    code: "VWB",
+    code: "VOI",
     year: "2026",
     title: "Voice Wings",
     subtitle: "离线声控可穿戴翅膀装置",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
   },
   {
     slug: "slidefix",
-    code: "SFX",
+    code: "SLI",
     year: "2026",
     title: "SlideFix",
     subtitle: "微信小程序 · PPT 交稿助手",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     problem:
       "实习汇报、课程作业或客户交稿前，PPT 里常残留切换动画、演讲者备注、作者信息，或页数过多需要拆开。用户往往要在 WPS/Office 里手动逐项清理，既费时也容易漏。",
     role:
-      "个人公开项目（GitHub：jinjiangy40/slidefix）。我负责产品流程与端到端实现：微信小程序前端（首页 / 预览 / 结果 / 我的）、FastAPI 处理服务，以及 ppt_tools 核心清理与页管理逻辑；另保留桌面端与命令行路径便于本地验证。",
+      "个人公开项目。我负责产品流程与端到端实现：微信小程序前端（首页 / 预览 / 结果 / 我的）、FastAPI 处理服务，以及 ppt_tools 核心清理与页管理逻辑；另保留桌面端与命令行路径便于本地验证。",
     decisions: [
       "把主流程设计成“选文件 → 设选项 → 预览变更计划 → 确认处理 → 下载”，避免批量误改",
       "交稿清理聚焦去切换/动画、清备注与批注、清作者属性、删隐藏页；字体调整作为可选项",
@@ -169,15 +169,14 @@ export const projects: Project[] = [
     outcome: [
       "完成可联调的微信小程序原型（展示版本 v0.3.0）：首页、预览、结果、我的四页流程打通",
       "实现预览接口与确认处理接口：先返回 changePlan，再执行清理 / 删页 / 拆分并下载 pptx 或 zip",
-      "沉淀公开仓库、联调文档与发布清单，方便复查与后续正式上线配置",
+      "沉淀项目说明与发布清单，方便复查与后续正式上线配置",
     ],
     reflection:
       "这个项目最重要的产品判断，是把“批处理能力”收进可确认的预览步骤。清理功能本身不难堆，难的是让用户在改之前看见后果。后续若正式上线，会优先补齐公网 HTTPS、隐私说明与真机验收，而不是继续盲目加功能。",
     repoUrl: "https://github.com/jinjiangy40/slidefix",
     repoLabel: "jinjiangy40/slidefix",
     evidenceTitle: "产品结构",
-    evidenceNote:
-      "以下为应用图标、安全流程示意与系统架构示意；源码与说明见公开 GitHub 仓库。",
+    evidenceNote: "以下为应用图标与产品流程示意；完整说明见我的项目主页与公开源码。",
     evidence: [
       {
         kind: "image",
@@ -189,13 +188,13 @@ export const projects: Project[] = [
         kind: "image",
         label: "02 / SAFE FLOW",
         caption: "安全流程：选文件 → 预览计划 → 确认处理 → 下载",
-        src: "/projects/slidefix/flow.svg",
+        src: "/projects/slidefix/flow.png",
       },
       {
         kind: "image",
         label: "03 / ARCHITECTURE",
         caption: "系统结构：小程序前端 · FastAPI · ppt_tools 核心",
-        src: "/projects/slidefix/architecture.svg",
+        src: "/projects/slidefix/architecture.png",
       },
     ],
   },
