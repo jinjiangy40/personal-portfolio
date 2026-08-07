@@ -42,9 +42,8 @@ export default async function ProjectPage({
           </ul>
           {project.repoUrl ? (
             <p className="case-repo">
-              GitHub ·{" "}
               <a href={project.repoUrl} target="_blank" rel="noreferrer">
-                {project.repoLabel ?? project.repoUrl}
+                {project.repoLabel ?? "查看项目仓库 ↗"}
               </a>
             </p>
           ) : null}

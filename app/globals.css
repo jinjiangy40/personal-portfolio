@@ -266,3 +266,28 @@ h1,h2,h3,.deck-copy h1,.deck-title h2,.hub-copy h2,.deck-contact h2,.campus-plac
 .deck-records ul{margin:2px 0 0;padding:0;list-style:none;display:grid;gap:4px}
 .deck-records li{position:relative;padding-left:12px;color:#586577;font-size:13px;line-height:1.5}
 .deck-records li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--blue)}
+.record-role{
+  flex:1 1 100%;
+  color:var(--blue);
+  font:700 12px/1.3 var(--font-sans),Outfit,sans-serif;
+  letter-spacing:.04em;
+}
+.business-panel{
+  min-height:0;
+  overflow-y:auto;
+  padding-right:4px;
+}
+.business-panel .business-hero{
+  padding:22px 20px;
+}
+.business-panel .business-hero h3{
+  font-size:clamp(22px,2.2vw,28px);
+}
+.business-panel .business-hero ul{
+  margin-top:10px;
+  gap:8px;
+}
+.business-panel .business-hero li{
+  font-size:14px;
+  line-height:1.55;
+}
