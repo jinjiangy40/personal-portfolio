@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "澳门科技大学人工智能本科生。求职方向：AI 产品运营 / 市场增长 / 商务拓展（BD）。累计签约 10 万元+，多个 200+ 人社群运营。",
   openGraph: {
     title: "袁锦江 · AI · PRODUCT · GROWTH",
-    description: "把 AI、产品与市场执行，变成真实结果",
+    description: "把 AI 想法做成产品，把产品推向真实市场。",
     images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "袁锦江 · AI · PRODUCT · GROWTH",
-    description: "把 AI、产品与市场执行，变成真实结果",
+    description: "把 AI 想法做成产品，把产品推向真实市场。",
     images: ["/og.png"],
   },
 };
