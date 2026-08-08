@@ -15,6 +15,8 @@ export type Project = {
   summary: string;
   /** 首页作品卡：一句话说清解决什么问题 */
   hook: string;
+  /** 首页卡片主视觉：真实截图/实物图 */
+  cover: string;
   tags: string[];
   hero: string;
   problem: string;
@@ -39,6 +41,7 @@ export const projects: Project[] = [
     summary:
       "面向实习汇报、小组作业与日常交稿场景，把 PPT 清理做成「先预览变更计划、再确认处理」的微信小程序流程，降低批量误改风险。",
     hook: "解决：PPT 动画、备注批量清理易漏易误改。",
+    cover: "/projects/slidefix/ui-home.png",
     tags: ["产品设计", "AI 辅助开发", "微信小程序", "FastAPI", "Python"],
     hero: "设计「生成变更计划 → 预览 → 确认处理」流程，借助 AI 完成可联调原型。",
     problem:
@@ -91,6 +94,7 @@ export const projects: Project[] = [
     summary:
       "面向选购电脑硬件的用户，把分散的 CPU、GPU、内存、主板参数组织成可搜索、可比较、可解释的选择流程。",
     hook: "解决：硬件参数散落多站，普通用户很难形成可解释的装机判断。",
+    cover: "/projects/selectpc/app-home.png",
     tags: ["需求设计", "数据整理", "AI 辅助开发", "Python", "Streamlit"],
     hero: "从「查参数」到「做决定」：需求输入 → 参数分析 → 硬件对比 → 推荐结果。",
     problem:
@@ -142,6 +146,7 @@ export const projects: Project[] = [
     summary:
       "面向舞台表演与角色扮演场景，把离线语音、舵机传动与 RGB 灯效整合进可穿戴机械翅膀。",
     hook: "解决：表演翅膀多为静态装饰，难以离线声控并联动灯效与动作。",
+    cover: "/projects/voice-wings/image1.jpeg",
     tags: ["硬件设计", "ESP32", "LD3320", "舵机", "WS2812B"],
     hero: "把概念做成实体：离线语音控制翅膀动作，并联动 RGB 灯效。",
     problem:
