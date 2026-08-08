@@ -138,7 +138,7 @@ const showcaseProjects = [
     title: "Portfolio Website",
     subtitle: "个人求职作品集网站",
     hook: "围绕求职定位重新梳理信息架构与视觉表达，借助 ChatGPT、Cursor、Codex 完成响应式开发、多轮迭代与 Cloudflare Pages 部署。",
-    cover: "",
+    cover: "/projects/portfolio/home.png",
     tags: "信息架构 / 视觉表达 / Cloudflare Pages",
     href: "https://github.com/jinjiangy40/personal-portfolio",
     external: true,
