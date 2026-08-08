@@ -66,6 +66,7 @@ const quickSignals = [
 const practiceItems = [
   {
     title: "活动运营",
+    role: "",
     points: [
       "协助统筹 ZOWIE GEAR CS2 高校赛澳门赛区赛事执行",
       "协助参与王者荣耀高校联赛澳门赛区",
@@ -74,26 +75,28 @@ const practiceItems = [
   },
   {
     title: "策划与商务",
+    role: "赞助拓展 · 方案撰写 · 协调执行",
     points: [
-      "参与赞助拓展",
+      "参与赞助拓展，对接校园活动合作资源",
       "撰写联展、联赛、万圣节等多份校园活动策划案",
-      "参与方案、活动与现场协调执行",
+      "参与方案推进、现场协同与活动落地",
     ],
   },
   {
     title: "公开表达",
+    role: "主持 · 主题分享",
     points: [
       "担任校园歌手大赛总决赛主持",
       "1×100 俱乐部多次完成 50–60 人主题分享",
-      "持续练习公开表达与临场沟通",
+      "在主持与分享中持续训练公开表达与临场沟通能力",
     ],
   },
   {
     title: "校外成长",
+    role: "",
     points: [
       "1×100 俱乐部优秀学员 / 优秀教练员",
-      "入选哈尔滨工业大学第二届计算城市科学营",
-      "参与跨学科 AI 应用课题学习与交流",
+      "入选哈尔滨工业大学第二届计算城市科学营，参与跨学科 AI 应用课题学习与交流",
     ],
   },
 ];
@@ -123,7 +126,7 @@ const showcaseProjects = [
     slug: "voice-wings",
     title: "Voice Wings",
     subtitle: "离线声控可穿戴翅膀",
-    hook: "负责元器件选型、电路焊接、机械结构、电源调试和整机联调，实现离线语音控制翅膀动作与 RGB 灯效联动。",
+    hook: "负责元器件选型、电路焊接、机械结构、电源调试与整机联调，实现离线语音控制翅膀动作及 RGB 灯效联动。",
     cover: "/projects/voice-wings/image1.jpeg",
     tags: "ESP32 / LD3320 / 舵机 / WS2812B",
     href: "/projects/voice-wings/",
@@ -228,8 +231,28 @@ export default function Home() {
     };
   }, [isMobile, total]);
 
+  const onEdgeFlip = (event: React.MouseEvent<HTMLElement>) => {
+    if (isMobile) return;
+    const target = event.target as HTMLElement;
+    if (target.closest("a,button,nav,header,.deck-controls,.deck-project,.experience-grid article,.practice-grid article,.signal-strip")) {
+      return;
+    }
+    const ratio = event.clientX / window.innerWidth;
+    if (ratio <= 0.13) go(current - 1);
+    else if (ratio >= 0.87) go(current + 1);
+  };
+
   return (
-    <main className={isMobile ? "deck scroll-deck" : "deck magazine-deck"}>
+    <main
+      className={isMobile ? "deck scroll-deck" : "deck magazine-deck"}
+      onClick={onEdgeFlip}
+    >
+      {!isMobile ? (
+        <>
+          <div className="edge-hint edge-hint-left" aria-hidden="true" />
+          <div className="edge-hint edge-hint-right" aria-hidden="true" />
+        </>
+      ) : null}
       <header className="deck-header">
         <button onClick={() => go(0)} className="wordmark" type="button">
           YJJ
@@ -338,8 +361,8 @@ export default function Home() {
         >
           <div className="slide-label">03 / SELECTED PROJECTS</div>
           <div className="deck-title title-lg">
-            <h2>代表项目</h2>
-            <p>四个项目：产品、数据、硬件与本站本身。</p>
+            <h2>项目选编</h2>
+            <p>四个切口，对应产品思考、数据整理、硬件实现与个人表达。</p>
           </div>
           <div className="project-grid-2x2">
             {showcaseProjects.map((project, i) => {
@@ -349,7 +372,6 @@ export default function Home() {
                     {project.cover ? <img src={project.cover} alt="" /> : null}
                     <span className="project-cover-mark">CASE 0{i + 1}</span>
                     <strong className="project-cover-title">{project.title}</strong>
-                    <em className="project-cover-en">{project.current ? "LIVE" : project.slug.toUpperCase()}</em>
                   </div>
                   <article>
                     <h3>{project.title}</h3>
@@ -399,6 +421,7 @@ export default function Home() {
               <article key={item.title}>
                 <span>0{i + 1}</span>
                 <h3>{item.title}</h3>
+                {item.role ? <strong>{item.role}</strong> : null}
                 <ul>
                   {item.points.map((point) => (
                     <li key={point}>{point}</li>
@@ -416,9 +439,9 @@ export default function Home() {
         >
           <p className="eyebrow">05 / CONTACT</p>
           <h2>
-            期待参与 AI 产品运营、
+            把兴趣变成能力，
             <br />
-            市场增长与商业化实践。
+            把能力变成结果。
           </h2>
           <p>求职方向 · AI 产品运营 / 市场增长 / 商务拓展（BD）｜可实习 2026.09 — 2027.06</p>
           <div className="deck-contact-links">
